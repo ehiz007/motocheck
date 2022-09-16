@@ -85,7 +85,6 @@ export default function SideBar() {
         position: "relative",
 
         display: { xs: "none", lg: "block" },
-        minHeight: "80vh",
       }}
       item
       xs={0}
@@ -99,6 +98,7 @@ export default function SideBar() {
           borderRadius: 2,
           p: 2,
           width: "200px",
+          height: "89vh",
         }}
       >
         <Box>

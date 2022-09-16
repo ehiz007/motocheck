@@ -16,7 +16,7 @@ export default function TopBar() {
         position: "fixed",
         width: { xs: "87%", sm: "90%", lg: "75%" },
         mx: "auto",
-        top: 10,
+        top: 21,
         zIndex: 10,
         boxShadow: 2,
         borderRadius: "5px",
@@ -39,7 +39,7 @@ export default function TopBar() {
         <MenuRoundedIcon
           onClick={toggleDrawer(true)}
           sx={{
-            display: { xs: "block", md: "none" },
+            display: { xs: "block", lg: "none" },
             color: "white",
             cursor: "pointer",
             backgroundColor: "black",

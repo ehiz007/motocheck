@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button, ButtonProps } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,6 +6,23 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Avatar from "@mui/material/Avatar";
+import { styled } from "@mui/material/styles";
+
+const ViewMoreButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  color: "#000000",
+  backgroundColor: "none",
+  border: "1px solid #53BED2",
+  "&:hover": {
+    backgroundColor: "#53BED2",
+    color: "white",
+    border: "#53BED2",
+  },
+  "&:focus": {
+    backgroundColor: "none",
+    // color: "white",
+    // border: "#53BED2",
+  },
+}));
 
 export default function KeyActionsArea() {
   interface Content {
@@ -66,13 +83,15 @@ export default function KeyActionsArea() {
           msOverflowStyle: "none",
           scrollbarWidth: "none",
           WebkitScrollSnapType: "none",
-          width: "100%",
+          borderRadius: "10px",
+          backgroundColor: "white",
+          boxShadow: 2,
         }}
       >
         <TableContainer
           sx={{
-            backgroundColor: "white",
-            boxShadow: 3,
+            boxShadow: 2,
+
             borderRadius: "10px",
             p: 2,
             msOverflowStyle: "none",
@@ -146,6 +165,13 @@ export default function KeyActionsArea() {
             </TableBody>
           </Table>
         </TableContainer>
+      </Box>
+      <Box sx={{ mt: 3, display: "flex", justifyContent: "center" }}>
+        <ViewMoreButton size="large" variant="outlined">
+          <Typography sx={{ textTransform: "none" }}>
+            View more activity
+          </Typography>
+        </ViewMoreButton>
       </Box>
     </Box>
   );
