@@ -3,7 +3,7 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 export default function Overview() {
   return (
-    <Box sx={{ mt: 3 }}>
+    <Box sx={{ mt: { xs: 15, md: 10 } }}>
       <Typography variant="h6" sx={{ color: "#999999", fontSize: 21 }}>
         Overview
       </Typography>

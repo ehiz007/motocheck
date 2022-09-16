@@ -13,6 +13,7 @@ import {
 } from "../Icons";
 import { blue } from "@mui/material/colors";
 import { NavItem } from "../SideBar";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface Props {
   open: boolean;
@@ -82,32 +83,47 @@ export default function SwipeableEdgeDrawer(props: Props) {
     <SwipeableDrawer
       sx={{
         "& 	.MuiDrawer-paper": {
-          maxHeight: "60%",
-          height: "80%",
-          width: "sm",
-          maxWidth: "sm",
-          margin: "0 auto",
-          borderTopRightRadius: "20px",
-          borderTopLeftRadius: "20px",
+          maxHeight: "100%",
+          height: "100%",
+          width: "60%",
+          maxWidth: "60%",
+          margin: "0 0",
+          // borderTopRightRadius: "20px",
+          // borderTopLeftRadius: "20px",
           p: 2,
         },
       }}
-      anchor={"bottom"}
+      anchor={"left"}
       open={open}
       onClose={toggleDrawer(false)}
       onOpen={toggleDrawer(true)}
     >
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: 0 }}>
         <Box
           sx={{
             backgroundColor: "white",
             border: 0,
-            mt: 1,
+            // mt: 1,
           }}
         >
-          <img alt="logo" src="/logo.svg" />
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <img alt="logo" src="/logo.svg" />
+            <CloseIcon
+              onClick={toggleDrawer(false)}
+              sx={{
+                color: "white",
+                cursor: "pointer",
+                backgroundColor: "black",
+                borderRadius: "50%",
+                fontSize: 28,
+                p: 0.7,
+                // boxShadow: 2,
+                mr: 1,
+              }}
+            />
+          </Box>
 
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ my: 2 }}></Divider>
           {navList.map((item, index) => (
             <Box
               sx={{

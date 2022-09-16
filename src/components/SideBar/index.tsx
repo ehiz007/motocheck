@@ -82,46 +82,56 @@ export default function SideBar() {
   return (
     <Grid
       sx={{
-        boxShadow: 3,
-        backgroundColor: "white",
-        borderRadius: 2,
-        p: 2,
+        position: "relative",
+
         display: { xs: "none", lg: "block" },
+        minHeight: "80vh",
       }}
       item
       xs={0}
       lg={3}
     >
-      <Box>
-        <img alt="logo" src="/logo.svg" />
-      </Box>
-
-      <Divider sx={{ my: 2 }} />
-      {navList.map((item, index) => (
-        <Box
-          sx={{
-            p: 1.6,
-            backgroundColor: item.name === routePath ? blue[50] : "",
-            borderRadius: "5px",
-            display: "flex",
-            alignItems: "center",
-            my: 0.5,
-            color: "primary",
-          }}
-          key={index}
-        >
-          {item.symbol(item.name)}
-
-          <Typography
-            sx={{
-              fontSize: 14,
-              color: item.name === routePath ? blue[400] : "#5D6C76",
-            }}
-          >
-            {item.name}
-          </Typography>
+      <Box
+        sx={{
+          position: "fixed",
+          boxShadow: 3,
+          backgroundColor: "white",
+          borderRadius: 2,
+          p: 2,
+          width: "200px",
+        }}
+      >
+        <Box>
+          <img alt="logo" src="/logo.svg" />
         </Box>
-      ))}
+
+        <Divider sx={{ my: 2 }} />
+        {navList.map((item, index) => (
+          <Box
+            sx={{
+              p: 1.6,
+              backgroundColor: item.name === routePath ? blue[50] : "",
+              borderRadius: "5px",
+              display: "flex",
+              alignItems: "center",
+              my: 0.5,
+              color: "primary",
+            }}
+            key={index}
+          >
+            {item.symbol(item.name)}
+
+            <Typography
+              sx={{
+                fontSize: 14,
+                color: item.name === routePath ? blue[400] : "#5D6C76",
+              }}
+            >
+              {item.name}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
     </Grid>
   );
 }

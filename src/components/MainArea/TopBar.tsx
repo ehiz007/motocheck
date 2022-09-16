@@ -13,10 +13,16 @@ export default function TopBar() {
   return (
     <Box
       sx={{
+        position: "fixed",
+        width: { xs: "87%", sm: "90%", lg: "75%" },
+        mx: "auto",
+        top: 10,
+        zIndex: 10,
         boxShadow: 2,
         borderRadius: "5px",
         backgroundColor: "white",
-        p: 1,
+        px: 1,
+        py: 1.5,
         display: "flex",
         alignItems: "center",
         mt: { xs: 1, md: 0 },
@@ -25,7 +31,6 @@ export default function TopBar() {
       <Drawer open={open} toggleDrawer={toggleDrawer} />
       <Box
         sx={{
-          position: "sticky",
           display: "flex",
           flex: 1,
           alignItems: "center",
